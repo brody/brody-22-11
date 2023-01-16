@@ -1,0 +1,27 @@
+---
+// import ListLayout from '../layouts/ListLayout.astro';
+// import PostLayout from '../../layouts/PostLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+
+// const { frontmatter } = Astro.props;
+// import Date from '../components/BlogDate.astro';
+
+export async function getStaticPaths() {
+  let allPosts = await Astro.glob('../data/*.{md,mdx}');
+  let allSortedPosts = allPosts.sort(
+    (a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+  );
+  return allSortedPosts.map((post) => {
+    return {
+      params: { slug: post.frontmatter.slug },
+      props: { ...post },
+    };
+  });
+}
+// const content = Astro.props;
+const { Content, frontmatter } = Astro.props;
+const title = frontmatter.title;
+const description = 'Astromnl blog post about ' + frontmatter.title;
+---
+
+<Content />

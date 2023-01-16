@@ -1,0 +1,90 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1, 4); // remove the first & last "/"
+import { Image, Picture } from '@astrojs/image/components';
+import { Icon } from 'astro-icon';
+import avatar from '../assets/avatar.png';
+---
+
+<style lang='scss'>
+  .nav-item {
+    @apply items-center flex px-3 py-1 rounded-lg hover:bg-neutral-850  lg:px-4;
+    &#nav-item--home {
+      @apply hidden md:flex;
+    }
+  }
+  .nav-item--active {
+    @apply cursor-default bg-neutral-800 text-neutral-150;
+    .nav-item__icon {
+      @apply text-neutral-50;
+    }
+  }
+  .nav-item__icon {
+    @apply w-4 h-4 hidden mr-3 sm:block text-neutral-450 fill-current;
+  }
+</style>
+
+<nav
+  class='flex-none sticky top-0 z-10 flex justify-between px-5 text-sm font-medium leading-6 border-b border-neutral-800 bg-neutral-900 lg:bottom-0 lg:h-screen lg:w-48 lg:flex-col lg:border-r lg:border-b-0 lg:px-4 lg:pt-8 lg:pb-5'
+>
+  <div class='flex justify-between w-full lg:flex-col'>
+    <a href='/' class='px-5 py-4 -ml-6 lg:ml-0 lg:mb-4 lg:px-4'>
+      <!-- <img src='../assets/avatar.png' alt='' class='w-8 h-8 rounded-full ring-blue-500 hover:ring-2 lg:h-12 lg:w-12' /> -->
+      <Picture
+        src={avatar}
+        widths={[32, 96]}
+        sizes='100vw, 1024px'
+        aspectRatio='1:1'
+        alt='Brody MacLean'
+        class='h-8 rounded-full ring-blue-500 hover:ring-2 lg:h-12 lg:w-12'
+      />
+    </a>
+
+    <ul class='flex items-center flex-hori lg:flex-col lg:items-stretch'>
+      <li>
+        <a href='/' id='nav-item--home' class={currentPath === '' ? 'nav-item nav-item--active' : 'nav-item'}>
+          <Icon pack='tabler' name='home-2' class='nav-item__icon' />
+          Home
+        </a>
+      </li>
+      <li>
+        <a href='/journal/' class={currentPath === 'jou' ? 'nav-item nav-item--active' : 'nav-item'}>
+          <Icon pack='tabler' name='notebook' class='nav-item__icon' stroke-width='1' />
+          Journal
+        </a>
+      </li>
+      <!-- <li>
+        <a href='/work/' class={currentPath === 'wor' ? 'nav-item nav-item--active' : 'nav-item'}>
+          <Icon pack='tabler' name='brush' class='nav-item__icon' />
+          Work
+        </a>
+      </li> -->
+      <li>
+        <a href='/about/' class={currentPath === 'abo' ? 'nav-item nav-item--active' : 'nav-item'}>
+          <Icon pack='tabler' name='user-circle' class='nav-item__icon' />
+          About
+        </a>
+      </li>
+    </ul>
+  </div>
+  <ul class='items-center hidden flex-hori lg:flex lg:flex-col lg:items-stretch'>
+    <li>
+      <a href='/uses/' class={currentPath === 'use' ? 'nav-item nav-item--active' : 'nav-item'}>
+        <Icon pack='tabler' name='device-desktop-analytics' class='nav-item__icon' />
+        Uses
+      </a>
+    </li>
+    <li>
+      <a href='/now/' class={currentPath === 'now' ? 'nav-item nav-item--active' : 'nav-item'}>
+        <Icon pack='tabler' name='calendar-event' class='nav-item__icon' />
+        Now
+      </a>
+    </li>
+    <!-- <li>
+      <a href='/bookmarks/' class={currentPath === 'boo' ? 'nav-item nav-item--active' : 'nav-item'}>
+        <Icon pack='tabler' name='bookmarks' size={24} class='nav-item__icon' />
+        Bookmarks
+      </a>
+    </li> -->
+  </ul>
+</nav>

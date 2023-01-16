@@ -1,0 +1,42 @@
+---
+import BlogListItem from '../components/BlogListItem.astro';
+const allPosts = await Astro.glob('../data/*.{md,mdx}');
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
+
+nonDraftPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
+let currentYear = '';
+---
+
+{
+  nonDraftPosts.map((post) => (
+    <>
+      <>
+        {post.frontmatter.pubDate.slice(0, -20) === currentYear ? (
+          ''
+        ) : (
+          <span class='year pt-8 pb-4 px-4 text-lg font-semibold text-neutral-100'>
+            {(currentYear = post.frontmatter.pubDate.slice(0, -20))}
+          </span>
+        )}
+      </>
+      <BlogListItem
+        title={post.frontmatter.title}
+        pubDate={post.frontmatter.pubDate}
+        url={'/' + post.frontmatter.slug}
+      />
+    </>
+  ))
+}
+
+<script>
+  let sidebar = document.querySelector('#list');
+
+  let top = sessionStorage.getItem('sidebar-scroll');
+  if (top !== null) {
+    sidebar.scrollTop = parseInt(top, 10);
+  }
+
+  window.addEventListener('beforeunload', () => {
+    sessionStorage.setItem('sidebar-scroll', sidebar.scrollTop);
+  });
+</script>

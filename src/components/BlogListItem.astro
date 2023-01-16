@@ -1,0 +1,27 @@
+---
+const { url, title, pubDate } = Astro.props;
+import Date from '../components/BlogDate.astro';
+const pathname = new URL(Astro.request.url).pathname;
+// const currentPath = pathname; // remove the first & last "/"
+---
+
+<style lang='scss'>
+  .entry-item {
+    @apply flex items-center rounded-lg px-4 py-3 hover:bg-neutral-850;
+  }
+  .entry-item--active {
+    @apply cursor-default bg-neutral-800 text-neutral-50;
+  }
+  // .entry-item__icon {
+  //   @apply w-4 h-4 hidden mr-3 sm:block fill-current;
+  // }
+</style>
+
+<a href={url} class={pathname === url ? 'entry-item entry-item--active' : 'entry-item'}>
+  <div class='flex flex-col justify-center space-y-1'>
+    <div class='font-medium text-sm'>{title}</div>
+    <time datetime={pubDate} class='text-xs uppercase text-neutral-450'>
+      <Date date={pubDate} dateFormat='LL LLL' />
+    </time>
+  </div>
+</a>

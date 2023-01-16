@@ -1,0 +1,145 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+// import { Image, Picture } from '@astrojs/image/components';
+import Icon from 'astro-icon';
+---
+
+<PageLayout pageTitle='Brody MacLean'>
+  <section class='mb-20'>
+    <h1 class='mb-3'>
+      G'day, I'm Brody MacLean, a multi-disciplinary designer working remotely from Sydney, Australia.
+    </h1>
+    <p class='mb-8 text-lg text-neutral-450'>
+      <span class='mr-0.5'>Currently, I am Design System Lead at</span>
+      <a href='https://www.prospa.com/' class='inline-block border-none' target='_blank' rel='noreferrer'>
+        <Icon name='prospa' class='inline-block h-4 fill-current text-emerald-500 hover:text-emerald-400' />
+      </a>, giving our designers and developers the tools to help small businesses keep moving.
+    </p>
+    <p class='mb-8'>
+      Previously I built design systems for<!-- -->
+      <a
+        href='https://www.deputy.com/'
+        class='link hover:decoration-orange-500 hover:text-neutral-300'
+        target='_blank'
+        rel='noreferrer'>Deputy</a
+      >
+      &amp;
+      <a
+        href='https://jobadder.com/'
+        class='link hover:decoration-sky-500 hover:text-neutral-300'
+        target='_blank'
+        rel='noreferrer'>JobAdder</a
+      >, as well as designed products for
+      <a
+        href='https://safetyculture.com/'
+        class='link hover:decoration-violet-500 hover:text-neutral-300'
+        target='_blank'
+        rel='noreferrer'>SafetyCulture</a
+      >,
+      <a
+        href='https://www.hudl.com/'
+        class='link hover:decoration-orange-500 hover:text-neutral-300'
+        target='_blank'
+        rel='noreferrer'>Hudl</a
+      >
+      and
+      <a
+        href='https://www.farifaxmedia.com.au/'
+        class='link hover:decoration-blue-500 hover:text-neutral-300'
+        target='_blank'
+        rel='noreferrer'>Fairfax Media</a
+      >.
+    </p>
+    <h4 class='mb-4 uppercase font-semibold text-xs leading-normal text-secondary'>Get in touch</h4><div
+      class='flex flex-wrap gap-2'
+    >
+      <a
+        target='_blank'
+        class='inline-flex no-underline items-center h-8 px-3 border-none rounded-md text-sky-400 bg-neutral-800 hover:bg-neutral-750 hover:text-sky-300'
+        href='https://twitter.com/BrodyMaclean'
+      >
+        <Icon pack='tabler' name='brand-twitter' class='inline-block w-4 h-4 mr-2' />
+        Twitter
+      </a>
+      <a
+        target='_blank'
+        class='inline-flex no-underline items-center h-8 px-3 text-pink-400 border-none rounded-md bg-neutral-800 hover:bg-neutral-750 hover:text-pink-300'
+        href='https://www.instagram.com/brody/'
+      >
+        <Icon pack='tabler' name='brand-instagram' class='inline-block w-4 h-4 mr-2' />
+        Instagram
+      </a>
+      <a
+        target='_blank'
+        class='inline-flex items-center no-underline h-8 px-3 text-yellow-400 border-none rounded-md bg-neutral-800 hover:bg-neutral-750 hover:text-yellow-300'
+        href='mailto:hello@brody.com'
+      >
+        <Icon pack='tabler' name='at' class='inline-block w-4 h-4 mr-2' />Email
+      </a>
+    </div>
+  </section>
+</PageLayout>
+
+<!-- <h1>Welcome to <span class='text-gradient'>Astro</span></h1>
+<p class='instructions'>
+  To get started, open the directory <code>src/pages</code> in your project.<br />
+  <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+</p>
+<ul role='list' class='link-card-grid'>
+  <Card
+    href='https://docs.astro.build/'
+    title='Documentation'
+    body='Learn how Astro works and explore the official API docs.'
+  />
+  <Card
+    href='https://astro.build/integrations/'
+    title='Integrations'
+    body='Supercharge your project with new frameworks and libraries.'
+  />
+  <Card href='https://astro.build/themes/' title='Themes' body='Explore a galaxy of community-built starter themes.' />
+  <Card href='https://astro.build/chat/' title='Community' body='Come say hi to our amazing Discord community. ❤️' />
+</ul> -->
+<style>
+  /* main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  } */
+</style>

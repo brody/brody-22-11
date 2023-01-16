@@ -1,0 +1,11 @@
+---
+import { format, parseISO } from 'date-fns';
+export interface Props {
+  date: string;
+  dateFormat?: string | undefined;
+}
+const { date, dateFormat } = Astro.props as Props;
+const formattedDate = format(parseISO(date), dateFormat);
+---
+
+{formattedDate}

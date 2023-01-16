@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/PageLayout.astro';
+import Icon from 'astro-icon';
+---
+
+<Layout pageTitle='404'>
+  <article class='mx-auto mt-2 w-index text-center sm:mt-6'>
+    <h1 class='text-3xl'>404</h1>
+    <p>This page does not exist</p>
+
+    <a
+      class='inline-flex no-underline items-center h-8 px-3 border-none rounded-md bg-neutral-800 hover:bg-neutral-750'
+      href='/'
+    >
+      <Icon pack='tabler' name='arrow-left' class='inline-block w-4 h-4 mr-2' />
+      Go back to home
+    </a>
+  </article>
+</Layout>

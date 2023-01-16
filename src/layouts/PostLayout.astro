@@ -1,0 +1,48 @@
+---
+import ListLayout from './ListLayout.astro';
+
+const { frontmatter } = Astro.props;
+import Date from '../components/BlogDate.astro';
+---
+
+<ListLayout title={frontmatter.title}>
+  <section class='mb-8'>
+    <h1 class='mb-3'>{frontmatter.title}</h1>
+    {
+      frontmatter.pubDate ? (
+        <time datetime={frontmatter.pubDate} class='text-sm uppercase text-neutral-450'>
+          <Date date={frontmatter.pubDate} dateFormat='LL LLL yyyy' />
+        </time>
+      ) : (
+        ''
+      )
+    }
+    <!-- <p><em>{frontmatter.description}</em></p> -->
+    <!-- <p>Written by {frontmatter.author}</p> -->
+  </section>
+
+  {frontmatter.lead ? <p class='lead'>{frontmatter.lead}</p> : ''}
+
+  {
+    frontmatter.image ? (
+      <img src={'/assets/journal/' + frontmatter.image.url} class='w-full mb-10' alt={frontmatter.image.alt} />
+    ) : (
+      ''
+    )
+  }
+
+  <!-- <div class='tags'>
+    {
+      frontmatter.tags.map((tag) => (
+        <p class='tag'>
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div> -->
+  <article class='prose'>
+    <slot />
+  </article>
+</ListLayout>
+
+<style></style>

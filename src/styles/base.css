@@ -1,0 +1,9 @@
+@layer base {
+  ::selection {
+    @apply bg-amber-800 text-white;
+  }
+
+  iframe, pre, code {
+    @apply max-w-full;
+  }
+}
