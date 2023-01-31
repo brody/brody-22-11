@@ -8,13 +8,13 @@ import avatar from '../assets/avatar.png';
 
 <style lang='scss'>
   .nav-item {
-    @apply items-center flex px-3 py-1 rounded-lg hover:bg-neutral-850  lg:px-4;
+    @apply items-center flex px-3 py-1 rounded-lg hover:bg-neutral-650  lg:px-4;
     &#nav-item--home {
       @apply hidden md:flex;
     }
   }
   .nav-item--active {
-    @apply cursor-default bg-neutral-800 text-neutral-150;
+    @apply cursor-default bg-neutral-700 text-neutral-150;
     .nav-item__icon {
       @apply text-neutral-50;
     }
@@ -25,7 +25,7 @@ import avatar from '../assets/avatar.png';
 </style>
 
 <nav
-  class='flex-none sticky top-0 z-10 flex justify-between px-5 text-sm font-medium leading-6 border-b border-neutral-800 bg-neutral-900 lg:bottom-0 lg:h-screen lg:w-48 lg:flex-col lg:border-r lg:border-b-0 lg:px-4 lg:pt-8 lg:pb-5'
+  class='flex-none sticky top-0 z-10 flex justify-between px-5 text-sm font-medium leading-6 lg:h-screen lg:w-48 lg:flex-col lg:px-4 lg:pt-8 lg:pb-5'
 >
   <div class='flex justify-between w-full lg:flex-col'>
     <a href='/' class='px-5 py-4 -ml-6 lg:ml-0 lg:mb-4 lg:px-4'>

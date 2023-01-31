@@ -5,7 +5,7 @@ title: Uses
 layout: ../layouts/PageLayout.astro
 description: Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in
 ---
-
+# Uses
 
 A list of hardware, software and on-the-go setup I use daily.
 

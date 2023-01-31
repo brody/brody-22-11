@@ -11,8 +11,8 @@ const { pageTitle } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <main class='flex flex-col flex-1 max-w-2xl px-5 pt-12 pb-12 mx-auto lg:px-8 lg:pt-32 prose'>
-    <div class='max-w-2xl mx-auto'>
+  <main class='flex flex-col flex-1 px-5 pt-12 pb-12 mx-auto lg:px-8 lg:pt-32 prose'>
+    <div class='max-w-2xl w-full mx-auto'>
       <slot />
     </div>
   </main>

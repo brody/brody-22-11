@@ -5,6 +5,7 @@ export interface Props {
 const { pageTitle } = Astro.props;
 
 import Navigation from '../components/Navigation.astro';
+import Surface from '../components/Surface.astro';
 import '../styles/global.css';
 ---
 
@@ -20,6 +21,7 @@ import '../styles/global.css';
   <body
     class='flex flex-col w-full h-full min-h-screen antialiased lg:flex-row lg:relative text-neutral-350 bg-neutral-900 font-wotfard leading-relaxed'
   >
+    <Surface />
     <Navigation />
 
     <slot />

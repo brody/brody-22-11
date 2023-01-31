@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 import Date from '../components/BlogDate.astro';
 ---
 
-<ListLayout title={frontmatter.title}>
+<ListLayout pageTitle={frontmatter.title}>
   <section class='mb-8'>
     <h1 class='mb-3'>{frontmatter.title}</h1>
     {
