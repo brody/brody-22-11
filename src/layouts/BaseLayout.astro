@@ -14,8 +14,27 @@ import '../styles/global.css';
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
+
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link href='/favicon-dark.png' rel='icon' media='(prefers-color-scheme: dark)' />
+    <link href='/favicon-light.png' rel='icon' media='(prefers-color-scheme: light)' />
+    <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
+    <link rel='icon' href='/apple-touch-icon.png' />
+
+    <meta property='og:title' content={pageTitle} />
+    <meta property='og:description' content='A Design System Lead based in Sydney, Australia.' />
+    <meta property='og:image' name='og:image' content='/og.png' />
+
+    <meta name='og:url' content='https://brody.com' />
+
+    <meta name='twitter:site' content='@brodymaclean' />
+    <meta name='twitter:image' content='/og.png' />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={pageTitle} />
+    <meta name='twitter:description' content='A Design System Lead based in Sydney, Australia.' />
+
     <meta name='generator' content={Astro.generator} />
+
     <title>{pageTitle}</title>
   </head>
   <body
